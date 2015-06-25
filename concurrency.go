@@ -32,7 +32,7 @@ const numberOfWorkers = 5 // Max number of threads for fetching websites
 func main() {
 	wg.Add(numberOfWorkers)         // We need this, to ensure that main process do not end before all threads ends
 	allUrlsAddedToChannel.Add(1)    // Check if all urls are added to channel
-	channel := make(chan string, 6) // Create buffered channel of 10 elements
+	channel := make(chan string, 6) // Create buffered channel of 6 elements
 
 	// Add all urls to channel, concurently. Here we can eventually have more then one worker
 	// In case we would do some IO job(for example reading files), we could have more then one routine, but in this case
